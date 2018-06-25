@@ -1,0 +1,47 @@
+html {
+	/* 
+		border-box box model allows us to add padding and border to our elements without increasing their size
+	*/
+	box-sizing: border-box;
+}
+
+/*
+	We inherit box-sizing: border-box; from our <html> selector
+	Apparently this is a bit better than applying box-sizing: border-box; directly to the * selector
+*/
+*,
+*:before,
+*:after {
+	box-sizing: inherit;
+}
+
+/* ====================
+	STYLING THE HEADER
+======================*/
+.main-header ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+}
+
+.main-header li {
+	float: left;
+	margin: 15px 10px 0 10px;
+}
+
+.main-header li a {
+    display: block;
+    text-align: center;
+    text-decoration: none;
+}
+
+
+/* ====================
+	WRAPPER & CONTAINER STYLES
+======================*/
+.wrapper {
+	width: 80%;
+	margin: 0 auto;
+	border: 5px solid red;
+}
