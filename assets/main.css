@@ -5,6 +5,10 @@ html {
 	box-sizing: border-box;
 }
 
+html, body {
+
+}
+
 /*
 	We inherit box-sizing: border-box; from our <html> selector
 	Apparently this is a bit better than applying box-sizing: border-box; directly to the * selector
@@ -41,7 +45,8 @@ html {
 	WRAPPER & CONTAINER STYLES
 ======================*/
 .wrapper {
-	width: 80%;
+	width: 800px;
+	height: 600px;
 	margin: 0 auto;
 	border: 5px solid #BADA55;
 }
