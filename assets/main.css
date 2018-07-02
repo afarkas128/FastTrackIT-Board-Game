@@ -45,7 +45,7 @@ html, body {
 	WRAPPER & CONTAINER STYLES
 ======================*/
 .wrapper {
-	width: 1100px;
+	width: 1010px;
 	height: 600px;
 	margin: 0 auto;
 	border: 5px solid #BADA55;
@@ -77,4 +77,23 @@ html, body {
 	width: 100px;
 	color: red;
 }
+
+/* ====================
+	row round box
+======================*/
+div.round {
+	border-radius: 50%;
+	height: 100px;
+	width: 100px;
+	background-color: blueviolet;
+}
+
+.round span {
+    color: #ffffff;
+    display:block;
+    float:left;
+    margin:40px 45px;
+    /* padding:5px 10px */
+}
+
 
