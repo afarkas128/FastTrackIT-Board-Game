@@ -72,28 +72,40 @@ html, body {
 .square {
 	display: inline-block;
 	float: left;
-	border: 1px red solid;
+	border: 1px #DDDDDD solid;
 	height: 100px;
 	width: 100px;
 	color: red;
 }
 
 /* ====================
-	row round box
+	row circle number
 ======================*/
-div.round {
+
+.numberCircle {
 	border-radius: 50%;
-	height: 100px;
-	width: 100px;
-	background-color: blueviolet;
+
+	width: 95px;
+	height: 95px;
+	padding: 0.25em;
+
+	background: #39CCCC;
+	border: 0.1em solid #666;
+	color: #666;
+	text-align: center;
+
+	font: 50px "Bookman Old Style" , sans-serif;
 }
 
-.round span {
-    color: #ffffff;
-    display:block;
-    float:left;
-    margin:40px 45px;
-    /* padding:5px 10px */
-}
+
+
+
+
+
+
+
+
+
+
 
 
