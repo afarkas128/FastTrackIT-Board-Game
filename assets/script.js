@@ -19,4 +19,13 @@ function RandomDice() {
     return random;
 }
 
+divs="";
+var i;
+for(i = 1; i <= 30; i++) {
+    divs+= "<div class='row'>" +
+        "<div class='square'>" +
+        "<div class='numberCircle' id="+i+">"+i+"</div></div></div>";
+}
+document.getElementById("gol").innerHTML=divs;
+
 
