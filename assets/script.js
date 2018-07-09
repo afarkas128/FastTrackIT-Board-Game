@@ -11,14 +11,12 @@ generatePlayer.addEventListener('click', function() {
 	}
 });
 function RandomDice() {
-    var Dices = new Array();
-    Dices[0] = "./assets/imgs/dice_1.jpg";
-    Dices[1] = "./assets/imgs/dice_2.jpg";
-    Dices[2] = "./assets/imgs/dice_3.jpg";
-    Dices[3] = "./assets/imgs/dice_4.jpg";
-    Dices[4] = "./assets/imgs/dice_5.jpg";
-    Dices[5] = "./assets/imgs/dice_6.jpg";
-    var random = Math.floor(Math.random() * Dices.length);
+
+    var random = Math.floor(Math.random() * 6) + 1;
+    console.log(random);
     document.getElementById("numere").innerHTML = "<img src='"
-        + Dices[random] + "' alt='image'></img>";
+        + `./assets/imgs/dice_${random}.jpg` + "' alt='image'></img>";
+    return random;
 }
+
+
