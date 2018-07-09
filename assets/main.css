@@ -22,6 +22,12 @@ html, body {
 /* ====================
 	STYLING THE HEADER
 ======================*/
+.main-header {
+  width: 300px;
+  margin: 0 auto;
+  margin-bottom: 20px;
+}
+
 .main-header ul {
 	list-style: none;
 	margin: 0;
@@ -31,7 +37,7 @@ html, body {
 
 .main-header li {
 	float: left;
-	margin: 15px 10px 0 10px;
+	margin: 10px 15px 0px 20px;
 }
 
 .main-header li a {
@@ -45,11 +51,17 @@ html, body {
 	WRAPPER & CONTAINER STYLES
 ======================*/
 .wrapper {
-	width: 1010px;
-	height: 600px;
+	width: 100%;
+	height: 700px;
 	margin: 0 auto;
 	border: 5px solid #BADA55;
 }
+
+.container {
+	max-width: 1200px;
+	margin: 0 auto;
+}
+
 
 /* ====================
 	CLEARFIX
@@ -73,8 +85,8 @@ html, body {
 	display: inline-block;
 	float: left;
 	border: 1px #DDDDDD solid;
-	height: 100px;
-	width: 100px;
+	height: 120px;
+	width: 120px;
 	color: red;
 }
 
@@ -83,20 +95,25 @@ html, body {
 ======================*/
 
 .numberCircle {
-	border-radius: 50%;
-
 	width: 95px;
 	height: 95px;
+	margin: 0 auto;
 	padding: 0.25em;
-
-	background: #39CCCC;
-	border: 0.1em solid #666;
 	color: #666;
 	text-align: center;
-
 	font: 50px "Bookman Old Style" , sans-serif;
+	background: #39CCCC;
+	border-radius: 50%;
+	border: 0.1em solid #666;
+	margin-top: 10px;
 }
 
+/* ====================
+	p dice #numere
+======================*/
+#numere {
+	text-align: center;
+}
 
 
 
