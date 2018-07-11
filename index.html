@@ -3,7 +3,7 @@
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width">
-		<title>Board Game Group Project</title>
+		<title>FastTrackIT - Board Game Course Project</title>
 
 		<link rel="stylesheet" type="text/css" href="assets/normalize.css">
 		<link rel="stylesheet" type="text/css" href="assets/main.css">
@@ -25,85 +25,33 @@
 
 			<!-- .container -->
 			<div class="container">
+					<!-- .row -->
+					<div class="row">
+
+						<h1 class="board-game-title">FastTrackIT - Board Game Course Project</h1>
+						<h3 class="board-game-title">Click start game to generate the map</h3>
+						
+					</div>
+					<!-- /.row -->
 				<div id="gol">
-				<!-- .row -->
-				<div class="row">
 
-					<h1>Hello!</h1>
+					<!-- .row -->
 					
 				</div>
 				<!-- /.row -->
-
-				<!-- .row -->
-				<div class="row">
-					<div class="square">
-						<div class="numberCircle">1</div>
-					</div>
-				</div>
-				<!-- /.row -->
-
-				<div class="row">
-					<div class="square">
-						<div class="numberCircle">2</div>
-					</div>
-				</div>
-				<!-- /.row -->
-				<div class="row">
-					<div class="square">
-						<div class="numberCircle">3</div>
-					</div>
-				</div>
-				<!-- /.row -->
-				<div class="row">
-					<div class="square">
-						<div class="numberCircle">4</div>
-					</div>
-				</div>
-				<!-- /.row -->
-				<div class="row">
-					<div class="square">
-						<div class="numberCircle">5</div>
-					</div>
-				</div>
-				<!-- /.row -->
-				<div class="row">
-					<div class="square">
-						<div class="numberCircle">6</div>
-					</div>
-				</div>
-				<!-- /.row -->
-				<div class="row">
-					<div class="square">
-						<div class="numberCircle">7</div>
-					</div>
-				</div>
-				<!-- /.row -->
-				<div class="row">
-					<div class="square">
-						<div class="numberCircle">8</div>
-					</div>
-				</div>
-				<!-- /.row -->
-				<div class="row">
-					<div class="square">
-						<div class="numberCircle">9</div>
-					</div>
-				</div>
-				<!-- /.row -->
-				<div class="row">
-					<div class="square">
-						<div class="numberCircle">10</div>
-					</div>
-				</div>
-				</div>
-				<!-- /.row -->
-
+				<!-- .clearfix -->
 				<div class="clearfix">
-					<button id="generate-player" class="zar-aruncat">Generate Player</button>
+					<div class="row">
+						
+					<button id="generate-player" class="zar-aruncat btn-custom-style">Generate Player</button>
+					<button id="generate-map" class="btn-custom-style">Start Game</button>
 					
+					<input type="button" onClick="RandomDice()" value="Roll Dices" class="btn-custom-style">
+
+					</div>
+					<p id="numere"></p>
 				</div>
-				<input type="button" onClick="RandomDice()" value="Roll Dices">
-				<p id="numere"></p>
+				<!-- /.clearfix -->
 			</div>
 			<!-- /.container -->
 
