@@ -16,7 +16,6 @@ randomDice.style.display = 'none'
 
 /* function that rolls the dice */
 function RandomDice() {
-
     var random = Math.floor(Math.random() * 6) + 1;
     console.log(random);
     var numere = document.getElementById("numere").innerHTML = 
@@ -42,4 +41,3 @@ generateMap.addEventListener('click', function() {
     document.getElementById('generate-map').style.display = 'none';
     randomDice.style.display = 'inline-block'
 });
-
