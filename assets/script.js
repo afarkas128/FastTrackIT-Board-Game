@@ -1,15 +1,18 @@
 var generatePlayer = document.getElementById('generate-player');
 var generateMap = document.getElementById('generate-map');
+var randomDice = document.getElementById('random-dice');
 var userName = '';
 
-generatePlayer.addEventListener('click', function() {
-	userName = prompt('What is your name?');
-	if(userName !== '') {
-		alert(`Hello ${userName}, are you ready to play?`);	
-	} else {
-		prompt('What is your name?');
-	}
-});
+
+randomDice.style.display = 'none'
+// generatePlayer.addEventListener('click', function() {
+// 	userName = prompt('What is your name?');
+// 	if(userName !== '') {
+// 		alert(`Hello ${userName}, are you ready to play?`);	
+// 	} else {
+// 		prompt('What is your name?');
+// 	}
+// });
 
 /* function that rolls the dice */
 function RandomDice() {
@@ -36,5 +39,7 @@ function generateDivs() {
 /* Calling our map generator function on click */
 generateMap.addEventListener('click', function() {
     generateDivs();
+    document.getElementById('generate-map').style.display = 'none';
+    randomDice.style.display = 'inline-block'
 });
 
