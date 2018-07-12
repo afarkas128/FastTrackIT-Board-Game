@@ -39,6 +39,7 @@ function generateDivs() {
 /* Calling our map generator function on click */
 generateMap.addEventListener('click', function() {
     generateDivs();
-    document.getElementById('generate-map').style.display = 'none';
+    generateMap.style.display = 'none';
     randomDice.style.display = 'inline-block'
+    var hiddenTitle = document.getElementById('start-game-title').style.display = 'none';
 });
