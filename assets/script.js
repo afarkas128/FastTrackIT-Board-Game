@@ -28,7 +28,7 @@ randomDice.addEventListener('click', function() {
 /* Function that does the mapping for us */
 function generateDivs() {
     divs = "";
-    for(var i = 1; i <= 30; i++) {
+    for(var i = 1; i <= 40; i++) {
         divs+= "<div class='row'>" +
             "<div class='square'>" +
             "<div class='numberCircle' id="+ i +">"+ i +"</div></div></div>";

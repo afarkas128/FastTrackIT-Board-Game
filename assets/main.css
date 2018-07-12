@@ -105,7 +105,7 @@ div#gol {
 ======================*/
 
 .numberCircle {
-width: 100px;
+	width: 100px;
   height: 100px;
   margin: 0 auto;
   padding: 0.3em;
@@ -136,17 +136,21 @@ width: 100px;
 
 /* custom style for our three buttons on the page */
 .btn-custom-style {
-	width: 150px;
-  color: #fff;
+	cursor: pointer;
+	font-size: 20px;
+  width: 150px;
+  color: #666;
   background-color: #56cdcd;
   padding: 15px;
   position: relative;
   left: 31.9rem;
   margin: 25px 10px;
   margin-top: 25px;
-  border-radius: 25px;
+  border-radius: 30px;
   border: 1px solid #56cdcd;
 }
+
+.btn-custom-style:active { box-shadow: 1px 2px 1px #666; }
 
 
 
