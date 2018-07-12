@@ -131,6 +131,8 @@ width: 100px;
 ======================*/
 /* removes blue border from the button after it is clicked */
 .btn-custom-style:focus { outline: 0; }
+.contact-links { margin-top: 50px; }
+.contact-links > a { margin: 0 140px; }
 
 /* custom style for our three buttons on the page */
 .btn-custom-style {
@@ -142,7 +144,7 @@ width: 100px;
   left: 31.9rem;
   margin: 25px 10px;
   margin-top: 25px;
-  border-radius: 10px;
+  border-radius: 25px;
   border: 1px solid #56cdcd;
 }
 

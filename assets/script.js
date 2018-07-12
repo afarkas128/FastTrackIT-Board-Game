@@ -3,16 +3,15 @@ var generateMap = document.getElementById('generate-map');
 var randomDice = document.getElementById('random-dice');
 var userName = '';
 
-
-randomDice.style.display = 'none'
 // generatePlayer.addEventListener('click', function() {
-// 	userName = prompt('What is your name?');
-// 	if(userName !== '') {
-// 		alert(`Hello ${userName}, are you ready to play?`);	
-// 	} else {
-// 		prompt('What is your name?');
-// 	}
+//  userName = prompt('What is your name?');
+//  if(userName !== '') {
+//      alert(`Hello ${userName}, are you ready to play?`); 
+//  } else {
+//      prompt('What is your name?');
+//  }
 // });
+randomDice.style.display = 'none'
 
 /* function that rolls the dice */
 function RandomDice() {
@@ -22,11 +21,13 @@ function RandomDice() {
         "<img src='" + `./assets/imgs/dice_${random}.jpg` + "' alt='image'></img>";
     return random;
 }
+randomDice.addEventListener('click', function() {
+    RandomDice();
+});
 
 /* Function that does the mapping for us */
 function generateDivs() {
     divs = "";
-    // var i;
     for(var i = 1; i <= 30; i++) {
         divs+= "<div class='row'>" +
             "<div class='square'>" +
