@@ -5,10 +5,6 @@ html {
 	box-sizing: border-box;
 }
 
-html, body {
-
-}
-
 /*
 	We inherit box-sizing: border-box; from our <html> selector
 	Apparently this is a bit better than applying box-sizing: border-box; directly to the * selector
@@ -47,7 +43,6 @@ html, body {
   text-decoration: none;
 }
 
-
 /* ====================
 	WRAPPER & CONTAINER STYLES
 ======================*/
@@ -72,7 +67,6 @@ div#gol {
 	margin-top: 3.5rem;
 }
 
-
 /* ====================
 	CLEARFIX
 ======================*/
@@ -86,11 +80,9 @@ div#gol {
     display: table;
 }
 
-
 /* ====================
 	row squre box
 ======================*/
-
 .square {
 	padding: 10px;
   display: inline-block;
@@ -103,7 +95,6 @@ div#gol {
 /* ====================
 	row circle number
 ======================*/
-
 .numberCircle {
 	width: 100px;
   height: 100px;
@@ -124,7 +115,6 @@ div#gol {
 #numere {
 	text-align: center;
 }
-
 
 /* ====================
 	BUTTONS
@@ -151,15 +141,3 @@ div#gol {
 }
 
 .btn-custom-style:active { box-shadow: 1px 2px 1px #666; }
-
-
-
-
-
-
-
-
-
-
-
-
