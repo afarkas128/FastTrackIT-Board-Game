@@ -7,6 +7,8 @@ var rollPlayerTwo = document.getElementById('roll-player-two')
 var soldat = document.getElementById('gol');
 var player1 = document.createElement("div");
 var player2 = document.createElement("div");
+var showPlayerOne = document.getElementById('roll-player-one');
+var showPlayerTwo = document.getElementById('roll-player-two');
 
 player1.id="player-unu";
 player2.id="player-doi";
@@ -68,6 +70,8 @@ startGame.addEventListener('click', function() {
     generateDivs();
     randomDice.style.display = 'inline-block'
     var hiddenTitle = document.getElementById('start-game-title').style.display = 'none';
+    showPlayerOne.style.display = 'inline-block';
+    showPlayerTwo.style.display = 'inline-block';
 });
 
 rollPlayerOne.addEventListener('click', function() {
