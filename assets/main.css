@@ -54,7 +54,7 @@ html {
 }
 
 .container {
-    min-width: 1200px;
+  min-width: 1200px;
 	max-width: 1200px;
 	margin: 0 auto;
 }
@@ -110,7 +110,7 @@ div#gol {
   border: 0.1em solid #666;
 }
 
-#PlayerA {
+#player-unu {
     width: 40px;
     height: 40px;
     display: inline-block;
@@ -121,7 +121,7 @@ div#gol {
     margin-left: -35px;
     margin-top: 10px;
 }
-#PlayerB {
+#player-doi {
     width: 40px;
     height: 40px;
     display: inline-block;
@@ -167,11 +167,17 @@ div#gol {
 button.btn-custom-style.players {
     background-color: #bada55;
     border: 1px solid #bada55;
-    left: 30px !important;
 }
 
 .btn-custom-style:active { box-shadow: 1px 2px 1px #666; }
 
 .row-1 > #PlayerA {
     margin-top: 129px;
+}
+
+button#roll-player-one {
+	left: 20em;
+}
+#roll-player-two {
+	left: 23em;
 }

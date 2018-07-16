@@ -5,61 +5,62 @@ var userName = '';
 var rollPlayerOne = document.getElementById('roll-player-one')
 var rollPlayerTwo = document.getElementById('roll-player-two')
 var soldat = document.getElementById('gol');
+var player1 = document.createElement("div");
+var player2 = document.createElement("div");
 
-var Player1 = document.createElement("div");
-Player1.id="PlayerA";
+player1.id="player-unu";
+player2.id="player-doi";
 
-var Player2 = document.createElement("div");
-Player2.id="PlayerB";
+/* hide the roll dice button */
+randomDice.style.display = 'none';
 
+/* Function that does the mapping for us */
+function generateDivs() {
+    divs = "";
+    for(var i = 1; i <= 70; i++) {
+        //TODO -
+        // rowNumber
+        // divs+= '<div class="square row-' + rowNumber + '">' +
+        divs += '<div class="square">' + "<div class='numberCircle' id=" + i + ">" + i + "</div></div>";
+    }
+    soldat.innerHTML = divs;
+}
 
 function addPlayerOne(id) {
     var position = 1;
-    if (Player1.parentElement) {
-        position = parseInt(Player1.parentElement.id) + id;
+    if (player1.parentElement) {
+        position = parseInt(player1.parentElement.id) + id;
     }
-    document.getElementById(position).appendChild(Player1);
-
+    document.getElementById(position).appendChild(player1);
 }
 function addPlayerTwo(id) {
-    document.getElementById(id).appendChild(Player2);
+    var position = 1;
+    if (player2.parentElement) {
+        position = parseInt(player2.parentElement.id) + id;
+    }
+    document.getElementById(position).appendChild(player2);
 }
 
-function RemovePlayer1(id){
-    var Player= document.getElementById("PlayerA");
-    Player.remove()
+function removePlayer1(id){
+    var playerUnu= document.getElementById("player-unu");
+    playerUnu.remove();
 }
-function RemovePlayer2(id){
-    var Player= document.getElementById("PlayerB");
-    Player.remove()
+function removePlayer2(id){
+    var playerDoi= document.getElementById("player-doi");
+    playerDoi.remove();
 }
-
-randomDice.style.display = 'none'
 
 /* function that rolls the dice */
 function rollDice() {
     var random = Math.floor(Math.random() * 6) + 1;
     console.log(random);
-    var numere = document.getElementById("numere").innerHTML = 
-        "<img src='" + `./assets/imgs/dice_${random}.jpg` + "' alt='image'></img>";
+    var numere = document.getElementById("numere").innerHTML = "<img src='" + `./assets/imgs/dice_${random}.jpg` + "' alt='image'></img>";
     return random;
 }
+
 randomDice.addEventListener('click', function() {
     addPlayerOne(rollDice())
 });
-
-/* Function that does the mapping for us */
-function generateDivs() {
-    divs = "";
-    for(var i = 1; i <= 40; i++) {
-        //TODO -
-        // rowNumber
-        // divs+= '<div class="square row-' + rowNumber + '">' +
-        divs+= '<div class="square">' +
-            "<div class='numberCircle' id="+ i +">"+ i +"</div></div></div>";
-    }
-    document.getElementById("gol").innerHTML = divs;
-}
 
 /* Calling our map generator function on click */
 startGame.addEventListener('click', function() {
