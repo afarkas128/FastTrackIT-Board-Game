@@ -1,5 +1,5 @@
 var generatePlayer = document.getElementById('generate-player');
-var generateMap = document.getElementById('generate-map');
+var startGame = document.getElementById('start-game');
 var randomDice = document.getElementById('random-dice');
 var userName = '';
 
@@ -37,9 +37,9 @@ function generateDivs() {
 }
 
 /* Calling our map generator function on click */
-generateMap.addEventListener('click', function() {
+startGame.addEventListener('click', function() {
+    startGame.style.display = 'none';
     generateDivs();
-    generateMap.style.display = 'none';
     randomDice.style.display = 'inline-block'
     var hiddenTitle = document.getElementById('start-game-title').style.display = 'none';
 });
