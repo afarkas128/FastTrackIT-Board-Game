@@ -64,9 +64,9 @@ html {
 	text-align: center;
 }
 
-div#gol {
+/*div#gol {
 	margin-top: 3.5rem;
-}
+}*/
 
 /* ====================
 	CLEARFIX
@@ -167,9 +167,9 @@ div#gol {
 
 .btn-custom-style:active { box-shadow: 1px 2px 1px #666; }
 
-.row-1 > #PlayerA {
+/*.row-1 > #PlayerA {
   margin-top: 129px;
-}
+}*/
 
 #roll-player-one {
 	left: 20em;

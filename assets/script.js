@@ -2,13 +2,11 @@ var generatePlayer = document.getElementById('generate-player');
 var startGame = document.getElementById('start-game');
 var randomDice = document.getElementById('random-dice');
 var userName = '';
-var rollPlayerOne = document.getElementById('roll-player-one')
-var rollPlayerTwo = document.getElementById('roll-player-two')
+var rollPlayerOne = document.getElementById('roll-player-one');
+var rollPlayerTwo = document.getElementById('roll-player-two');
 var soldat = document.getElementById('gol');
 var player1 = document.createElement("div");
 var player2 = document.createElement("div");
-var showPlayerOne = document.getElementById('roll-player-one');
-var showPlayerTwo = document.getElementById('roll-player-two');
 
 player1.id="player-unu";
 player2.id="player-doi";
@@ -19,7 +17,7 @@ randomDice.style.display = 'none';
 /* Function that does the mapping for us */
 function generateDivs() {
     divs = "";
-    for(var i = 1; i <= 70; i++) {
+    for(var i = 1; i <= 60; i++) {
         //TODO -
         // rowNumber
         // divs+= '<div class="square row-' + rowNumber + '">' +
@@ -63,6 +61,10 @@ function rollDice() {
 randomDice.addEventListener('click', function() {
     addPlayerOne(rollDice())
 });
+// randomDice.addEventListener('click', function() {
+//     addPlayerTwo(rollDice())
+// });
+
 
 /* Calling our map generator function on click */
 startGame.addEventListener('click', function() {
@@ -70,13 +72,13 @@ startGame.addEventListener('click', function() {
     generateDivs();
     randomDice.style.display = 'inline-block'
     var hiddenTitle = document.getElementById('start-game-title').style.display = 'none';
-    showPlayerOne.style.display = 'inline-block';
-    showPlayerTwo.style.display = 'inline-block';
+    rollPlayerOne.style.display = 'inline-block';
+    rollPlayerTwo.style.display = 'inline-block';
 });
 
 rollPlayerOne.addEventListener('click', function() {
-    addPlayerOne(1);
+    addPlayerOne(0);
 });
 rollPlayerTwo.addEventListener('click', function() {
-    addPlayerTwo(1);
-})
+    addPlayerTwo(0);
+});
