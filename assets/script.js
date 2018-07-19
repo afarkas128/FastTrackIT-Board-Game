@@ -8,11 +8,22 @@ var soldat = document.getElementById('gol');
 var player1 = document.createElement("div");
 var player2 = document.createElement("div");
 
+
 player1.id="player-unu";
 player2.id="player-doi";
 
 /* hide the roll dice button */
 randomDice.style.display = 'none';
+
+/* Calling our map generator function on click */
+startGame.addEventListener('click', function() {
+    startGame.style.display = 'none';
+    generateDivs();
+    randomDice.style.display = 'inline-block'
+    var hiddenTitle = document.getElementById('start-game-title').style.display = 'none';
+    rollPlayerOne.style.display = 'inline-block';
+    rollPlayerTwo.style.display = 'inline-block';
+});
 
 /* Function that does the mapping for us */
 function generateDivs() {
@@ -49,6 +60,13 @@ function removePlayer2(id){
     var playerDoi= document.getElementById("player-doi");
     playerDoi.remove();
 }
+/* placing players on board game */
+rollPlayerOne.addEventListener('click', function() {
+    addPlayerOne(0);
+});
+rollPlayerTwo.addEventListener('click', function() {
+    addPlayerTwo(0);
+});
 
 /* function that rolls the dice */
 function rollDice() {
@@ -66,19 +84,3 @@ randomDice.addEventListener('click', function() {
 // });
 
 
-/* Calling our map generator function on click */
-startGame.addEventListener('click', function() {
-    startGame.style.display = 'none';
-    generateDivs();
-    randomDice.style.display = 'inline-block'
-    var hiddenTitle = document.getElementById('start-game-title').style.display = 'none';
-    rollPlayerOne.style.display = 'inline-block';
-    rollPlayerTwo.style.display = 'inline-block';
-});
-
-rollPlayerOne.addEventListener('click', function() {
-    addPlayerOne(0);
-});
-rollPlayerTwo.addEventListener('click', function() {
-    addPlayerTwo(0);
-});
