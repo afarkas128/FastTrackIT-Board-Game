@@ -47,16 +47,22 @@ html {
 	WRAPPER & CONTAINER STYLES
 ======================*/
 .wrapper {
-	width: 100%;
-	height: 800px;
-	margin: 0 auto;
-	/*border: 5px solid #BADA55;*/
+  display: grid;
+  width: 100%;
+  height: auto;
+  margin: 0 auto;
+  /* border: 5px solid #BADA55; */
 }
 
 .container {
-  min-width: 1200px;
+/*  min-width: 1200px;
 	max-width: 1200px;
-	margin: 0 auto;
+	margin: 0 auto;*/
+  display: grid;
+  /* max-width: 1400px; */
+  margin: 0 auto;
+  grid-template-columns: 140px 1090px;
+  margin-top: 40px;
 }
 
 .board-game-title {
@@ -85,25 +91,25 @@ html {
 	row squre box
 ======================*/
 .square {
-	padding: 10px;
+	/*padding: 5px;*/
   display: inline-block;
   float: left;
-  border: 1px #DDDDDD solid;
-  height: 120px;
-  width: 120px;
+  /* border: 1px #DDDDDD solid; */
+  height: 100px;
+  width: 100px;
 }
 
 /* ====================
 	row circle number
 ======================*/
 .numberCircle {
-	width: 100px;
-  height: 100px;
+	width: 95px;
+  height: 95px;
   margin: 0 auto;
-  padding: 0.3em;
+  padding: 0.35em;
   color: #666;
   text-align: center;
-  font: 50px "Bookman Old Style" , sans-serif;
+  font: 45px "Bookman Old Style" , sans-serif;
   background: #39CCCC;
   border-radius: 50%;
   position: relative;
@@ -111,22 +117,22 @@ html {
 }
 
 #player-unu {
-  width: 40px;
-  height: 40px;
+  width: 30px;
+  height: 30px;
   background: #EB4436;
   border-radius: 20px;
   position: absolute;
-  left: 25px;
-  top: 25px;
+  left: 28px;
+  top: 28px;
 }
 #player-doi {
-  width: 40px;
-  height: 40px;
+  width: 30px;
+  height: 30px;
   background: #4288EF;
   border-radius: 20px;
   position: absolute;
-  left: 25px;
-  top: 25px;
+  left: 28px;
+  top: 28px;
 }
 
 /* ====================
@@ -147,15 +153,15 @@ html {
 /* custom style for our three buttons on the page */
 .btn-custom-style {
 	cursor: pointer;
-	font-size: 20px;
-  width: 150px;
+  font-size: 20px;
+  width: 125px;
   color: #666;
   background-color: #56cdcd;
   padding: 15px;
   position: relative;
-  left: 32rem;
+  /* left: 32rem; */
   margin: 25px 10px;
-  margin-top: 25px;
+  /* margin-top: 25px; */
   border-radius: 30px;
   border: 1px solid #56cdcd;
 }
@@ -172,13 +178,16 @@ html {
 }*/
 
 #roll-player-one {
-	left: 20em;
+	/*left: 20em;*/
 	display: none;
 }
 #roll-player-two {
-	left: 23em;
+	/*left: 23em;*/
 	display: none;
 }
 #random-dice {
 	display: none;
+}
+button#start-game {
+  margin: 0 auto;
 }
