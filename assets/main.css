@@ -61,7 +61,7 @@ html {
   display: grid;
   /* max-width: 1400px; */
   margin: 0 auto;
-  grid-template-columns: 140px 1090px;
+  grid-template-columns: 180px 1000px;
   margin-top: 40px;
 }
 
