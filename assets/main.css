@@ -139,7 +139,8 @@ html {
 	p dice #numere
 ======================*/
 #numere {
-	text-align: center;
+	/*text-align: center;*/
+  margin-left: 40px;
 }
 
 /* ====================
