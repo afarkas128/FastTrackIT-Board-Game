@@ -147,7 +147,10 @@ html {
 ======================*/
 /* removes blue border from the button after it is clicked */
 .btn-custom-style:focus { outline: 0; }
-.contact-links { margin-top: 50px; }
+.contact-links { 
+  margin-top: 50px; 
+  margin: 0 auto;
+}
 .contact-links > a { margin: 0 140px; }
 
 /* custom style for our three buttons on the page */
