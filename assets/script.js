@@ -1,12 +1,12 @@
-var generatePlayer = document.getElementById('generate-player');
-var startGame = document.getElementById('start-game');
-var randomDice = document.getElementById('random-dice');
-var userName = '';
-var rollPlayerOne = document.getElementById('roll-player-one');
-var rollPlayerTwo = document.getElementById('roll-player-two');
-var soldat = document.getElementById('gol');
-var player1 = document.createElement("div");
-var player2 = document.createElement("div");
+const generatePlayer = document.getElementById('generate-player');
+const startGame = document.getElementById('start-game');
+const randomDice = document.getElementById('random-dice');
+const userName = '';
+const rollPlayerOne = document.getElementById('roll-player-one');
+const rollPlayerTwo = document.getElementById('roll-player-two');
+const soldat = document.getElementById('gol');
+const player1 = document.createElement("div");
+const player2 = document.createElement("div");
 
 
 player1.id="player-unu";
