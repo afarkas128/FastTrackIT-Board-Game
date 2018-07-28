@@ -1,0 +1,197 @@
+html {
+	/* 
+		border-box box model allows us to add padding and border to our elements without increasing their size
+	*/
+	box-sizing: border-box;
+}
+
+/*
+	We inherit box-sizing: border-box; from our <html> selector
+	Apparently this is a bit better than applying box-sizing: border-box; directly to the * selector
+*/
+*,
+*:before,
+*:after {
+	box-sizing: inherit;
+}
+
+/* ====================
+	STYLING THE HEADER
+======================*/
+.main-header {
+  width: 300px;
+  margin: 0 auto;
+  margin-bottom: 20px;
+}
+
+.main-header ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+}
+
+.main-header li {
+	float: left;
+	margin: 10px 15px 0px 20px;
+}
+
+.main-header li a {
+	color: #3486ae;
+  display: block;
+  text-align: center;
+  text-decoration: none;
+}
+
+/* ====================
+	WRAPPER & CONTAINER STYLES
+======================*/
+.wrapper {
+  display: grid;
+  width: 100%;
+  height: auto;
+  margin: 0 auto;
+  /* border: 5px solid #BADA55; */
+}
+
+.container {
+/*  min-width: 1200px;
+	max-width: 1200px;
+	margin: 0 auto;*/
+  display: grid;
+  /* max-width: 1400px; */
+  margin: 0 auto;
+  grid-template-columns: 180px 1000px;
+  margin-top: 40px;
+}
+
+.board-game-title {
+	color: #56CDCD;
+	text-align: center;
+}
+
+/*div#gol {
+	margin-top: 3.5rem;
+}*/
+
+/* ====================
+	CLEARFIX
+======================*/
+.clearfix {
+	clear: both;
+}
+
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+/* ====================
+	row squre box
+======================*/
+.square {
+	/*padding: 5px;*/
+  display: inline-block;
+  float: left;
+  /* border: 1px #DDDDDD solid; */
+  height: 100px;
+  width: 100px;
+}
+
+/* ====================
+	row circle number
+======================*/
+.numberCircle {
+	width: 95px;
+  height: 95px;
+  margin: 0 auto;
+  padding: 0.35em;
+  color: #666;
+  text-align: center;
+  font: 45px "Bookman Old Style" , sans-serif;
+  background: #39CCCC;
+  border-radius: 50%;
+  position: relative;
+  border: 0.1em solid #666;
+}
+
+#player-unu {
+  width: 30px;
+  height: 30px;
+  background: #EB4436;
+  border-radius: 20px;
+  position: absolute;
+  left: 28px;
+  top: 28px;
+}
+#player-doi {
+  width: 30px;
+  height: 30px;
+  background: #4288EF;
+  border-radius: 20px;
+  position: absolute;
+  left: 28px;
+  top: 28px;
+}
+
+/* ====================
+	p dice #numere
+======================*/
+#numere {
+	/*text-align: center;*/
+  margin-left: 40px;
+}
+
+/* ====================
+	BUTTONS
+======================*/
+/* removes blue border from the button after it is clicked */
+.btn-custom-style:focus { outline: 0; }
+.contact-links { 
+  margin-top: 50px; 
+  margin: 0 auto;
+}
+.contact-links > a { margin: 0 140px; }
+
+/* custom style for our three buttons on the page */
+.btn-custom-style {
+	cursor: pointer;
+  font-size: 20px;
+  width: 125px;
+  color: #666;
+  background-color: #56cdcd;
+  padding: 15px;
+  position: relative;
+  /* left: 32rem; */
+  margin: 25px 10px;
+  /* margin-top: 25px; */
+  border-radius: 30px;
+  border: 1px solid #56cdcd;
+}
+
+/*button.btn-custom-style.players {
+  background-color: #bada55;
+  border: 1px solid #bada55;
+}*/
+
+.btn-custom-style:active { box-shadow: 1px 2px 1px #666; }
+
+/*.row-1 > #PlayerA {
+  margin-top: 129px;
+}*/
+
+#roll-player-one {
+	/*left: 20em;*/
+	display: none;
+}
+#roll-player-two {
+	/*left: 23em;*/
+	display: none;
+}
+#random-dice {
+	display: none;
+}
+button#start-game {
+  margin: 0 auto;
+}
