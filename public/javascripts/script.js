@@ -13,17 +13,17 @@ player1.id="player-unu";
 player2.id="player-doi";
 
 /* hide the roll dice button */
-randomDice.style.display = 'none';
+// randomDice.style.display = 'none';
 
 /* Calling our map generator function on click */
-startGame.addEventListener('click', function() {
-    startGame.style.display = 'none';
-    generateDivs();
-    randomDice.style.display = 'inline-block'
-    var hiddenTitle = document.getElementById('start-game-title').style.display = 'none';
-    rollPlayerOne.style.display = 'inline-block';
-    rollPlayerTwo.style.display = 'inline-block';
-});
+// startGame.addEventListener('click', function() {
+//     startGame.style.display = 'none';
+//     generateDivs();
+//     randomDice.style.display = 'inline-block'
+//     var hiddenTitle = document.getElementById('start-game-title').style.display = 'none';
+//     rollPlayerOne.style.display = 'inline-block';
+//     rollPlayerTwo.style.display = 'inline-block';
+// });
 
 /* Function that does the mapping for us */
 function generateDivs() {
@@ -34,8 +34,13 @@ function generateDivs() {
         // divs+= '<div class="square row-' + rowNumber + '">' +
         divs += '<div class="square">' + "<div class='numberCircle' id=" + i + ">" + i + "</div></div>";
     }
+    rollPlayerOne.style.display = 'inline-block';
+    rollPlayerTwo.style.display = 'inline-block';
+    // randomDice.style.display = 'inline-block'
     soldat.innerHTML = divs;
+    randomDice.style.display = 'inline-block';
 }
+generateDivs();
 
 function addPlayerOne(id) {
     var position = 1;
@@ -72,7 +77,7 @@ rollPlayerTwo.addEventListener('click', function() {
 function rollDice() {
     var random = Math.floor(Math.random() * 6) + 1;
     console.log(random);
-    var numere = document.getElementById("numere").innerHTML = "<img src='" + `./public/images/dice_${random}.jpg` + "' alt='image'></img>";
+    var numere = document.getElementById("numere").innerHTML = "<img src='" + `./images/dice_${random}.jpg` + "' alt='image'></img>";
     return random;
 }
 
@@ -83,4 +88,10 @@ randomDice.addEventListener('click', function() {
 //     addPlayerTwo(rollDice())
 // });
 
+// Load players info from database
+function initialLoad() {
 
+}
+
+
+initialLoad();
