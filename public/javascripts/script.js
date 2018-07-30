@@ -12,18 +12,6 @@ var player2 = document.createElement("div");
 player1.id="player-unu";
 player2.id="player-doi";
 
-/* hide the roll dice button */
-// randomDice.style.display = 'none';
-
-/* Calling our map generator function on click */
-// startGame.addEventListener('click', function() {
-//     startGame.style.display = 'none';
-//     generateDivs();
-//     randomDice.style.display = 'inline-block'
-//     var hiddenTitle = document.getElementById('start-game-title').style.display = 'none';
-//     rollPlayerOne.style.display = 'inline-block';
-//     rollPlayerTwo.style.display = 'inline-block';
-// });
 
 /* Function that does the mapping for us */
 function generateDivs() {
@@ -40,20 +28,30 @@ function generateDivs() {
     soldat.innerHTML = divs;
     randomDice.style.display = 'inline-block';
 }
-generateDivs();
 
 // Load players info from database
 function initialLoad() {
+
+    addPlayerOne(1);
+    addPlayerTwo(1);
+
     $.ajax({
-        url: 'http://localhost:3000/players_location',
+        url: '/players_location',
         method: "GET"
     }).done(function (players){
         console.info('done', players);
+
+        var player1Position = players[0].position;
+        var player2Position = players[1].position;
+
+        console.info(player1Position)
+        console.info(player2Position)
+
+        addPlayerOne(player1Position);
+        addPlayerTwo(player2Position);
     });
-    addPlayerOne(1);
-    addPlayerTwo(1);
+
 }
-initialLoad(); // load players positions from database on page load
 
 function addPlayerOne(id) {
     var position = 1;
@@ -109,3 +107,7 @@ randomDice.addEventListener('click', function() {
 //        }
 //     });
 // }
+
+generateDivs(); // generate divs on page load
+
+initialLoad(); // load players positions from database on page load
