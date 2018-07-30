@@ -42,12 +42,26 @@ function generateDivs() {
 }
 generateDivs();
 
+// Load players info from database
+function initialLoad() {
+    $.ajax({
+        url: 'http://localhost:3000/players_location',
+        method: "GET"
+    }).done(function (players){
+        console.info('done', players);
+    });
+    addPlayerOne(1);
+    addPlayerTwo(1);
+}
+initialLoad(); // load players positions from database on page load
+
 function addPlayerOne(id) {
     var position = 1;
     if (player1.parentElement) {
         position = parseInt(player1.parentElement.id) + id;
     }
     document.getElementById(position).appendChild(player1);
+
 }
 function addPlayerTwo(id) {
     var position = 1;
@@ -65,33 +79,33 @@ function removePlayer2(id){
     var playerDoi= document.getElementById("player-doi");
     playerDoi.remove();
 }
-/* placing players on board game */
-rollPlayerOne.addEventListener('click', function() {
-    addPlayerOne(0);
-});
-rollPlayerTwo.addEventListener('click', function() {
-    addPlayerTwo(0);
-});
 
 /* function that rolls the dice */
 function rollDice() {
     var random = Math.floor(Math.random() * 6) + 1;
     console.log(random);
-    var numere = document.getElementById("numere").innerHTML = "<img src='" + `./images/dice_${random}.jpg` + "' alt='image'></img>";
+    var numere = document.getElementById("numere").innerHTML = `<img src="./images/dice_${random}.jpg" alt="image"></img>`;
     return random;
-}
 
+}
+// function randomDice() that roll the dice and moves the player
 randomDice.addEventListener('click', function() {
-    addPlayerOne(rollDice())
+    addPlayerOne(rollDice());
 });
 // randomDice.addEventListener('click', function() {
 //     addPlayerTwo(rollDice())
 // });
 
-// Load players info from database
-function initialLoad() {
-
-}
 
 
-initialLoad();
+// updating the players position to the database
+// function updatePlayersPosition() {
+//     $.ajax({
+//         url: 'http://localhost:3000/players_location',
+//         method: "POST"
+//     }).done(function (response) {
+//        if (response.success) {
+//
+//        }
+//     });
+// }
