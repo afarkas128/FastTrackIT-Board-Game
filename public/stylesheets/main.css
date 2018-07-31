@@ -16,27 +16,27 @@ html {
 }
 
 /* ====================
-	STYLING THE HEADER
+	STYLING THE FOOTER
 ======================*/
-.main-header {
+.main-footer {
   width: 300px;
-  margin: 0 auto;
+  margin: 50 px;
   margin-bottom: 20px;
 }
 
-.main-header ul {
+.main-footer ul {
 	list-style: none;
 	margin: 0;
 	padding: 0;
 	overflow: hidden;
 }
 
-.main-header li {
+.main-footer li {
 	float: left;
 	margin: 10px 15px 0px 20px;
 }
 
-.main-header li a {
+.main-footer li a {
 	color: #3486ae;
   display: block;
   text-align: center;
@@ -61,7 +61,7 @@ html {
   display: grid;
   /* max-width: 1400px; */
   margin: 0 auto;
-  grid-template-columns: 180px 1000px;
+  grid-template-columns: 200px 1000px;
   margin-top: 40px;
 }
 
@@ -134,7 +134,11 @@ html {
   left: 28px;
   top: 28px;
 }
-
+.active-player{
+    transform: scale(1.1);
+    border-color: #ffc600;
+    box-shadow: 0 0 1rem #ffc600;
+}
 /* ====================
 	p dice #numere
 ======================*/
