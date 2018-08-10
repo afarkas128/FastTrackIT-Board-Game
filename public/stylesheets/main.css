@@ -33,7 +33,7 @@ html {
 
 .main-footer li {
 	float: left;
-	margin: 10px 15px 0px 20px;
+	margin: 0 10px;
 }
 
 .main-footer li a {
@@ -55,24 +55,16 @@ html {
 }
 
 .container {
-/*  min-width: 1200px;
-	max-width: 1200px;
-	margin: 0 auto;*/
   display: grid;
-  /* max-width: 1400px; */
-  margin: 0 auto;
-  grid-template-columns: 200px 1000px;
+  grid-template-columns: 260px 1000px;
   margin-top: 40px;
+  grid-gap: 10px;
 }
 
 .board-game-title {
 	color: #56CDCD;
 	text-align: center;
 }
-
-/*div#gol {
-	margin-top: 3.5rem;
-}*/
 
 /* ====================
 	CLEARFIX
@@ -94,7 +86,6 @@ html {
 	/*padding: 5px;*/
   display: inline-block;
   float: left;
-  /* border: 1px #DDDDDD solid; */
   height: 100px;
   width: 100px;
 }
@@ -144,14 +135,13 @@ html {
 ======================*/
 #numere {
 	/*text-align: center;*/
-  margin-left: 40px;
+  margin-left: 90px;
 }
 
 /* ====================
 	BUTTONS
 ======================*/
 /* removes blue border from the button after it is clicked */
-.btn-custom-style:focus { outline: 0; }
 .contact-links { 
   margin-top: 50px; 
   margin: 0 auto;
@@ -159,6 +149,7 @@ html {
 .contact-links > a { margin: 0 140px; }
 
 /* custom style for our three buttons on the page */
+.btn-custom-style:focus { outline: 0; }
 .btn-custom-style {
 	cursor: pointer;
   font-size: 20px;
@@ -167,23 +158,12 @@ html {
   background-color: #56cdcd;
   padding: 15px;
   position: relative;
-  /* left: 32rem; */
-  margin: 25px 10px;
-  /* margin-top: 25px; */
+  margin: 60px;
   border-radius: 30px;
   border: 1px solid #56cdcd;
 }
 
-/*button.btn-custom-style.players {
-  background-color: #bada55;
-  border: 1px solid #bada55;
-}*/
-
 .btn-custom-style:active { box-shadow: 1px 2px 1px #666; }
-
-/*.row-1 > #PlayerA {
-  margin-top: 129px;
-}*/
 
 #roll-player-one {
 	/*left: 20em;*/
