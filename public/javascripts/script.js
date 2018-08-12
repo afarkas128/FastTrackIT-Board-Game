@@ -1,16 +1,10 @@
-let generatePlayer = document.getElementById('generate-player');
-let startGame = document.getElementById('start-game');
 let randomDice = document.getElementById('random-dice');
-let userName = '';
-// let rollPlayerOne = document.getElementById('roll-player-one');
-// let rollPlayerTwo = document.getElementById('roll-player-two');
-let soldat = document.getElementById('gol');
-let player1 = document.createElement("div");
-let player2 = document.createElement("div");
+let boardGameTable = document.getElementById('gol');
+let redPlayer = document.createElement("div");
+let bluePlayer = document.createElement("div");
 
-
-player1.id="player-unu";
-player2.id="player-doi";
+redPlayer.id="player-unu";
+bluePlayer.id="player-doi";
 
 
 /* Function that does the mapping for us */
@@ -22,11 +16,7 @@ function generateDivs() {
         // divs+= '<div class="square row-' + rowNumber + '">' +
         divs += '<div class="square">' + "<div class='numberCircle' id=" + i + ">" + i + "</div></div>";
     }
-    // rollPlayerOne.style.display = 'inline-block';
-    // rollPlayerTwo.style.display = 'inline-block';
-    // randomDice.style.display = 'inline-block'
-    soldat.innerHTML = divs;
-    randomDice.style.display = 'inline-block';
+    boardGameTable.innerHTML = divs;
 }
 
 // Load players info from database
@@ -41,54 +31,96 @@ function initialLoad() {
     }).done(function (players){
         console.info('done', players);
 
-        let player1Position = players[0].position;
-        let player2Position = players[1].position;
+        let redPlayerPosition = players[0].position;
+        let bluePlayerPosition = players[1].position;
 
-        console.info(player1Position)
-        console.info(player2Position)
+        console.info(redPlayerPosition)
+        console.info(bluePlayerPosition)
 
-        addPlayerOne(player1Position);
-        addPlayerTwo(player2Position);
+        addPlayerOne(redPlayerPosition);
+        addPlayerTwo(bluePlayerPosition);
     });
 
 }
 // function that moves the player dot on the board
 function addPlayerOne(id) {
     let position = 1;
-    if (player1.parentElement) {
-        position = parseInt(player1.parentElement.id) + id;
+    if (redPlayer.parentElement) {
+        position = parseInt(redPlayer.parentElement.id) + id;
     }
-    document.getElementById(position).appendChild(player1);
+    document.getElementById(position).appendChild(redPlayer);
 
 }
 function addPlayerTwo(id) {
     let position = 1;
-    if (player2.parentElement) {
-        position = parseInt(player2.parentElement.id) + id;
+    if (bluePlayer.parentElement) {
+        position = parseInt(bluePlayer.parentElement.id) + id;
     }
-    document.getElementById(position).appendChild(player2);
+    document.getElementById(position).appendChild(bluePlayer);
 }
 
-// function removePlayer1(id){
-//     let playerUnu= document.getElementById("player-unu");
-//     playerUnu.remove();
-// }
-// function removePlayer2(id){
-//     let playerDoi= document.getElementById("player-doi");
-//     playerDoi.remove();
+// /* function that rolls the dice */
+// function rollDice() {
+//     let randomNumber = Math.floor(Math.random() * 6) + 1;
+//     console.log(randomNumber);
+//     // let numere = document.getElementById("numere").innerHTML = `<img src="public/images/dice_${randomNumber}.jpg" alt="image"></img>`;
+//     return randomNumber;
 // }
 
-/* function that rolls the dice */
-function rollDice() {
-    let random = Math.floor(Math.random() * 6) + 1;
-    console.log(random);
-    let numere = document.getElementById("numere").innerHTML = `<img src="public/images/dice_${random}.jpg" alt="image"></img>`;
-    return random;
-}
-// function randomDice() that roll the dice and moves the player
-randomDice.addEventListener('click', function() {
-    addPlayerOne(rollDice());
+// function randomDice() that rolls the dice and moves the player
+let forConditional = false;
+randomDice.addEventListener('click', function(id) {
+    // addPlayerOne(rollDice());
+    /* function that rolls the dice */
+    let randomNumber = Math.floor(Math.random() * 6) + 1;
+    function rollDice() {
+        console.log(`You rolled ${randomNumber}`);
+        // let numere = document.getElementById("numere").innerHTML = `<img src="public/images/dice_${randomNumber}.jpg" alt="image"></img>`;
+        return randomNumber;
+    }
+
+    if(!forConditional) {
+        addPlayerOne(rollDice());
+        alert(`Red rolled ${randomNumber}`);
+        forConditional = true;
+    } else {
+        addPlayerTwo(rollDice());
+        alert(`Blue rolled ${randomNumber}`);
+        forConditional = false;
+    }
 });
+
+// Immediately-invoked function expression
+// let fn3 = (function() {
+//   let first = true;
+//   return function() {
+//     first ? fn1() : fn2();
+//     first = !first;
+//   }
+// })();
+// function fn1() {
+//   addPlayerOne(rollDice());
+//   alert(`Player one rolled ${randomNumber}`);
+// };
+// function fn2() {
+//   addPlayerTwo(rollDice());
+//   alert(`Player two rolled ${randomNumber}`);
+// };
+
+// document.getElementById('random-dice').onclick = playerOneRoll;
+
+// function playerOneRoll() {
+//     document.getElementById('random-dice').onclick = playerTwoRoll;
+//     addPlayerOne(rollDice());
+//     // alert(`Red rolled  !`);
+// }
+
+// function playerTwoRoll() {
+//     document.getElementById('random-dice').onclick = playerOneRoll;
+//     addPlayerTwo(rollDice());
+//     // alert(`Blue rolled  !`);
+// }
+
 
 // updating the players position to the database
 // function updatePlayersPosition() {
