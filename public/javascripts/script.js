@@ -49,7 +49,10 @@ function addPlayerOne(id) {
         position = parseInt(redPlayer.parentElement.id) + id;
     }
     document.getElementById(position).appendChild(redPlayer);
-
+    if(position === 60) {
+        alert('Congratulations, you won!');
+        randomDice.disabled = true;
+    }
 }
 function addPlayerTwo(id) {
     let position = 1;
@@ -57,6 +60,10 @@ function addPlayerTwo(id) {
         position = parseInt(bluePlayer.parentElement.id) + id;
     }
     document.getElementById(position).appendChild(bluePlayer);
+    if(position === 60) {
+        alert('Congratulations, you won!');
+        randomDice.disabled = true;
+    }
 }
 
 // /* function that rolls the dice */
