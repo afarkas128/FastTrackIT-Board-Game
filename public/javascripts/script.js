@@ -19,12 +19,13 @@ function generateDivs() {
     boardGameTable.innerHTML = divs;
 }
 
-// Load players info from database
+// Load players positions from database
 function initialLoad() {
 
     addPlayerOne(1);
     addPlayerTwo(1);
 
+    // getting the players positions from the database using ajax
     $.ajax({
         url: '/players_location',
         method: "GET"
@@ -42,7 +43,7 @@ function initialLoad() {
     });
 
 }
-// function that moves the player dot on the board
+// function that moves the player on the board
 function addPlayerOne(id) {
     let position = 1;
     if (redPlayer.parentElement) {
@@ -50,7 +51,7 @@ function addPlayerOne(id) {
     }
     document.getElementById(position).appendChild(redPlayer);
     if(position === 60) {
-        alert('Congratulations, you won!');
+        alert('RED WINS THE GAME!');
         randomDice.disabled = true;
     }
 }
@@ -61,28 +62,20 @@ function addPlayerTwo(id) {
     }
     document.getElementById(position).appendChild(bluePlayer);
     if(position === 60) {
-        alert('Congratulations, you won!');
+        alert('BLUE WINS THE GAME!');
         randomDice.disabled = true;
     }
 }
 
-// /* function that rolls the dice */
-// function rollDice() {
-//     let randomNumber = Math.floor(Math.random() * 6) + 1;
-//     console.log(randomNumber);
-//     // let numere = document.getElementById("numere").innerHTML = `<img src="public/images/dice_${randomNumber}.jpg" alt="image"></img>`;
-//     return randomNumber;
-// }
-
 // function randomDice() that rolls the dice and moves the player
 let forConditional = false;
 randomDice.addEventListener('click', function(id) {
-    // addPlayerOne(rollDice());
-    /* function that rolls the dice */
+    // randomNumber generator
     let randomNumber = Math.floor(Math.random() * 6) + 1;
+    // rollDice function
     function rollDice() {
         console.log(`You rolled ${randomNumber}`);
-        // let numere = document.getElementById("numere").innerHTML = `<img src="public/images/dice_${randomNumber}.jpg" alt="image"></img>`;
+        let numere = document.getElementById("numere").innerHTML = `<img src="public/images/dice_${randomNumber}.jpg" alt="image"></img>`;
         return randomNumber;
     }
 
