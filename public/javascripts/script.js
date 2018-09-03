@@ -75,7 +75,7 @@ randomDice.addEventListener('click', function(id) {
     // rollDice function
     function rollDice() {
         console.log(`You rolled ${randomNumber}`);
-        let numere = document.getElementById("numere").innerHTML = `<img src="public/images/dice_${randomNumber}.jpg" alt="image"></img>`;
+        let numere = document.getElementById("numere").innerHTML = `<img src="../images/dice_${randomNumber}.jpg" alt="image"></img>`;
         return randomNumber;
     }
 
@@ -89,6 +89,9 @@ randomDice.addEventListener('click', function(id) {
         forConditional = false;
     }
 });
+
+
+
 
 // Immediately-invoked function expression
 // let fn3 = (function() {
