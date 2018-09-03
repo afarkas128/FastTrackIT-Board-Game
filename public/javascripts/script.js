@@ -22,8 +22,10 @@ function generateDivs() {
 // Load players positions from database
 function initialLoad() {
 
-    addPlayerOne(1);
-    addPlayerTwo(1);
+    //TODO - aici nu cred ca e nevoie sa fie setate pe pozitia unu pentru ca vor fi setate mai in jos cu date din db
+    //TODO - sa va asigurati ca in db le setati pe 1 inainte de fiecare joc
+    // addPlayerOne(1);
+    // addPlayerTwo(1);
 
     // getting the players positions from the database using ajax
     $.ajax({
@@ -35,8 +37,8 @@ function initialLoad() {
         let redPlayerPosition = players[0].position;
         let bluePlayerPosition = players[1].position;
 
-        console.info(redPlayerPosition)
-        console.info(bluePlayerPosition)
+        console.info(redPlayerPosition);
+        console.info(bluePlayerPosition);
 
         addPlayerOne(redPlayerPosition);
         addPlayerTwo(bluePlayerPosition);
@@ -67,6 +69,21 @@ function addPlayerTwo(id) {
     }
 }
 
+function updateDBPlayerPosition(player, playerPosition) {
+    $.ajax({
+        url: 'http://localhost:3000/players_location/update',
+        method: "POST",
+        data: {
+            player: player,
+            playerPosition: playerPosition
+        }
+    }).done(function (response) {
+       if (response.success) {
+           console.info(`player ${player} moved to position: ${playerPosition}`);
+       }
+    });
+}
+
 // function randomDice() that rolls the dice and moves the player
 let forConditional = false;
 randomDice.addEventListener('click', function(id) {
@@ -79,63 +96,22 @@ randomDice.addEventListener('click', function(id) {
         return randomNumber;
     }
 
+    let playerPosition;
+
     if(!forConditional) {
-        addPlayerOne(rollDice());
+        playerPosition = rollDice();
+        addPlayerOne(playerPosition);
+        updateDBPlayerPosition(1, playerPosition);
         alert(`Red rolled ${randomNumber}`);
         forConditional = true;
     } else {
-        addPlayerTwo(rollDice());
+        playerPosition = rollDice();
+        addPlayerTwo(playerPosition);
+        updateDBPlayerPosition(2, playerPosition);
         alert(`Blue rolled ${randomNumber}`);
         forConditional = false;
     }
 });
-
-
-
-
-// Immediately-invoked function expression
-// let fn3 = (function() {
-//   let first = true;
-//   return function() {
-//     first ? fn1() : fn2();
-//     first = !first;
-//   }
-// })();
-// function fn1() {
-//   addPlayerOne(rollDice());
-//   alert(`Player one rolled ${randomNumber}`);
-// };
-// function fn2() {
-//   addPlayerTwo(rollDice());
-//   alert(`Player two rolled ${randomNumber}`);
-// };
-
-// document.getElementById('random-dice').onclick = playerOneRoll;
-
-// function playerOneRoll() {
-//     document.getElementById('random-dice').onclick = playerTwoRoll;
-//     addPlayerOne(rollDice());
-//     // alert(`Red rolled  !`);
-// }
-
-// function playerTwoRoll() {
-//     document.getElementById('random-dice').onclick = playerOneRoll;
-//     addPlayerTwo(rollDice());
-//     // alert(`Blue rolled  !`);
-// }
-
-
-// updating the players position to the database
-// function updatePlayersPosition() {
-//     $.ajax({
-//         url: 'http://localhost:3000/players_location',
-//         method: "POST"
-//     }).done(function (response) {
-//        if (response.success) {
-//
-//        }
-//     });
-// }
 
 generateDivs(); // generate divs on page load
 initialLoad(); // load players positions from database on page load
