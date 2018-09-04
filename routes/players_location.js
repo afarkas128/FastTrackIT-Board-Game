@@ -28,11 +28,11 @@ router.post('/update', function(req, res, next) {
         if (err) throw err;
 
         const player = parseInt(req.body.player);
-        const playerPosition = parseInt(req.body.playerPosition);
+        const position = parseInt(req.body.position);
 
         //TODO - sa va asigurati ca in tabelul vostru aveti 2 coloane - una cu player (de tip int)
-        //TODO - si inca una cu playerPosition (tot de tip int)
-        let sql = `UPDATE players_location SET playerPosition = '${playerPosition}' WHERE player = ${player}`;
+        //TODO - si inca una cu position (tot de tip int)
+        let sql = `UPDATE players_location SET position = '${position}' WHERE player = ${player}`;
         connection.query(sql, function (err, result) {
             if (err) throw err;
             console.log(result);
